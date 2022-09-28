@@ -48,7 +48,9 @@ def get_word():
     conn.request('POST','/zaoan/index',params,headers)
     res = conn.getresponse()
     data = res.read()
-    return data.decode('utf-8')
+    datas = data.decode('utf-8')
+    #print(datas[52:-4])
+    return datas[52:-4]
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
