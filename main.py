@@ -40,6 +40,15 @@ def get_words():
     return get_words()
   return words.json()['data']['text']
 
+def get_word():
+    conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
+    params = urllib.parse.urlencode({'key':'2422cd2d2601a5d09f151e73100e47d2'})
+    headers = {'Content-type':'application/x-www-form-urlencoded'}
+    conn.request('POST','/zaoan/index',params,headers)
+    res = conn.getresponse()
+    data = res.read()
+    return data.decode('utf-8')
+
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
@@ -48,6 +57,6 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
-data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_word(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
