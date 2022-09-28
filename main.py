@@ -4,6 +4,7 @@ from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
 import os
+import http.client, urllib
 import random
 
 today = datetime.now()
