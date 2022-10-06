@@ -64,4 +64,4 @@ data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":
 res = wm.send_template(user_id, template_id, data)
 res1 = wm.send_template("o95975ly8eeIp66tejL2okZUGWyQ", template_id, data)
 print(res)
-print(re1)
+print(res1)
