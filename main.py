@@ -65,5 +65,7 @@ res = wm.send_template(user_id, template_id, data)
 res1 = wm.send_template("o95975ly8eeIp66tejL2okZUGWyQ", template_id, data)##小号
 res2 = wm.send_template("o95975jYcxQYKRraSx2384t5jYb0", template_id, data)##曹大梅
 res3 = wm.send_template("o95975qF8cDX6F6w_kb_KV-0Ya_Q", template_id, data)##龙
+res4 = wm.send_template("o95975uN4IRmGnUpXXQEzBUPPBNw", template_id, data)##罗
+res5 = wm.send_template("o95975rAnHKEejMJj-hMUlN-paI8", template_id, data)##胡
 print(res)
 print(res1)
